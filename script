@@ -140,11 +140,20 @@ if game.PlaceId == specificPlaceId then
         addButton("Inf Jump Script", "https://raw.githubusercontent.com/shakar60/infjump/main/script")
 
 
-        Tab4:AddSection({ Name = "LightTuxs Esp Gui" })
-        addButton("LightTuxs Esp Gui", "https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md")
+        Tab4:AddSection({ Name = "FullBright Script" })
+        addButton("Fullbright Script", "https://raw.githubusercontent.com/shakar60/no-fog/main/script")
 
-Tab4:AddSection({ Name = "Universal Anticheat Bypass" })
-        addButton("Universal Anticheat Bypass", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
+
+        Tab4:AddSection({ Name = "No Fog Script" })
+        addButton("No Fog Script", "https://raw.githubusercontent.com/shakar60/no-fog/main/script")
+
+
+        Tab4:AddSection({ Name = "LightTuxs Esp Script Gui" })
+        addButton("LightTuxs Esp Script Gui", "https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md")
+
+
+        Tab4:AddSection({ Name = "Universal Anticheat Bypass Script" })
+        addButton("Universal Anticheat Bypass Script", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
 
         Tab4:AddParagraph("Other Untitled Tag Game Scripts")
 
