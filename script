@@ -1,11 +1,14 @@
--- Define the specific PlaceId for which the script should work
-local specificPlaceId = 14044547200 -- Replace with your specific PlaceId
+-----------------------------------------------------------------
 
--- Check if the game is the correct one
+-- check if player is in UTG
+local specificPlaceId = 14044547200 -- Replace PlaceId with the game you want
 if game.PlaceId == specificPlaceId then
+
+-----------------------------------------------------------------
+  
     -- Window & Library
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() 
-
+  
     local Window = OrionLib:MakeWindow({
         Name = " ⭐️ Shakars UTG | Untitled Tag Game⭐️",
         HidePremium = false,
@@ -14,6 +17,8 @@ if game.PlaceId == specificPlaceId then
         ConfigFolder = "shakar"
     })
 
+-----------------------------------------------------------------
+  
     -- Notify
     game.StarterGui:SetCore("SendNotification", {
         Title = "⭐️ Shakars UTG Loaded ⭐️",
@@ -21,6 +26,8 @@ if game.PlaceId == specificPlaceId then
         Duration = 5,
     })
 
+-----------------------------------------------------------------
+  
     -- Tabs
     local Tab1 = Window:MakeTab({
         Name = "Home",
@@ -46,12 +53,18 @@ if game.PlaceId == specificPlaceId then
         PremiumOnly = false
     })
 
-    -- Contents
+-----------------------------------------------------------------
+  
+  -- Contents
+  
     Tab1:AddLabel("Tab Home:")
     Tab3:AddLabel("Reach/Hitbox Expander:")
     Tab4:AddLabel("Miscs:")
 
+-----------------------------------------------------------------
+  
     -- Join Discord
+  
     Tab1:AddSection({
         Name = "Join Shakars Discord Server"
     })
@@ -64,6 +77,8 @@ if game.PlaceId == specificPlaceId then
         end
     })
 
+-----------------------------------------------------------------
+  
     -- Credits
     Tab1:AddSection({
         Name = "Credits:"
@@ -74,6 +89,8 @@ if game.PlaceId == specificPlaceId then
     Tab1:AddParagraph("The Used Ui Library is Orion Ui Library", "Ui Library")
     Tab1:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub", "Credits")
 
+-----------------------------------------------------------------
+  
     -- Reach/Hitbox Expander Scripts
     local function addHitboxExpanders()
         local function addButton(name, url)
@@ -86,6 +103,8 @@ if game.PlaceId == specificPlaceId then
             })
         end
 
+-----------------------------------------------------------------
+    
         Tab3:AddSection({ Name = "Op Hitbox Expander Script Gui" })
         addButton("Op Hitbox Expander Script Gui", 'https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua')
 
@@ -101,6 +120,8 @@ if game.PlaceId == specificPlaceId then
 
     addHitboxExpanders()
 
+  -----------------------------------------------------------------
+  
     -- Misc Scripts
     local function addMiscScripts()
         local function addButton(name, url)
@@ -113,6 +134,8 @@ if game.PlaceId == specificPlaceId then
             })
         end
 
+-----------------------------------------------------------------
+    
         Tab4:AddSection({ Name = "Inf Jump Script" })
         addButton("Inf Jump Script", "https://raw.githubusercontent.com/shakar60/infjump/main/script")
 
@@ -134,6 +157,8 @@ Tab4:AddSection({ Name = "Universal Anticheat Bypass" })
 
     addMiscScripts()
 
+  -----------------------------------------------------------------
+  
     -- Player Info
     Tab2:AddSection({ Name = "Player Username:" })
     Tab2:AddParagraph("UserName", "UserName: " .. game.Players.LocalPlayer.Name)
@@ -147,7 +172,6 @@ Tab4:AddSection({ Name = "Universal Anticheat Bypass" })
     Tab2:AddSection({ Name = "Player Account Age:" })
     Tab2:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
 
-    -- Map Info
     Tab2:AddSection({ Name = "Map:" })
 
     local mapParagraph
@@ -180,3 +204,5 @@ Tab4:AddSection({ Name = "Universal Anticheat Bypass" })
 else
     print("This script is not intended for this game.")
 end
+
+-----------------------------------------------------------------
