@@ -1,0 +1,182 @@
+-- Define the specific PlaceId for which the script should work
+local specificPlaceId = 14044547200 -- Replace with your specific PlaceId
+
+-- Check if the game is the correct one
+if game.PlaceId == specificPlaceId then
+    -- Window & Library
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() 
+
+    local Window = OrionLib:MakeWindow({
+        Name = " ⭐️ Shakars UTG | Untitled Tag Game⭐️",
+        HidePremium = false,
+        IntroEnabled = false,
+        SaveConfig = true,
+        ConfigFolder = "shakar"
+    })
+
+    -- Notify
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "⭐️ Shakars UTG Loaded ⭐️",
+        Text = "Made by sh4kar60-sh4k4r6o On Discord",
+        Duration = 5,
+    })
+
+    -- Tabs
+    local Tab1 = Window:MakeTab({
+        Name = "Home",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    local Tab2 = Window:MakeTab({
+        Name = "Player Info",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    local Tab3 = Window:MakeTab({
+        Name = "Reach/Hitbox Extension",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    local Tab4 = Window:MakeTab({
+        Name = "Misc",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    -- Contents
+    Tab1:AddLabel("Tab Home:")
+    Tab3:AddLabel("Reach/Hitbox Expander:")
+    Tab4:AddLabel("Miscs:")
+
+    -- Join Discord
+    Tab1:AddSection({
+        Name = "Join Shakars Discord Server"
+    })
+
+    Tab1:AddButton({
+        Name = "Join Shakars Discord Server",
+        Callback = function()
+            setclipboard("https://discord.gg/vwXXfnuxUg")
+            print("Discord Link Set To Your Clipboard")
+        end
+    })
+
+    -- Credits
+    Tab1:AddSection({
+        Name = "Credits:"
+    })
+
+    Tab1:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord", "Shakar's Discord,Owner Of The hub")
+    Tab1:AddParagraph("I Dont Own Any Scripts In The Hub.", "Must Know")
+    Tab1:AddParagraph("The Used Ui Library is Orion Ui Library", "Ui Library")
+    Tab1:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub", "Credits")
+
+    -- Reach/Hitbox Expander Scripts
+    local function addHitboxExpanders()
+        local function addButton(name, url)
+            Tab3:AddButton({
+                Name = name,
+                Callback = function()
+                    loadstring(game:HttpGet(url))()
+                    print("Script Executed")
+                end
+            })
+        end
+
+        Tab3:AddSection({ Name = "Op Hitbox Expander Script Gui" })
+        addButton("Op Hitbox Expander Script Gui", 'https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua')
+
+        Tab3:AddSection({ Name = "Hitbox Expander Script Gui V2" })
+        addButton("Hitbox Expander Script Gui V2", 'https://pastebin.com/raw/JgtddWA3')
+
+        Tab3:AddSection({ Name = "Hitbox Expander Script Gui V3" })
+        addButton("Hitbox Expander Script Gui V3", 'https://raw.githubusercontent.com/louismich4el/ItsLouisPlayz-Scripts/main/Hitbox%20Expander.lua')
+
+        Tab3:AddSection({ Name = "Teen Titans Hitbox Expander Script" })
+        addButton("Teen Titans Hitbox Expander Script", 'https://raw.githubusercontent.com/shakar60/hit/main/box')
+    end
+
+    addHitboxExpanders()
+
+    -- Misc Scripts
+    local function addMiscScripts()
+        local function addButton(name, url)
+            Tab4:AddButton({
+                Name = name,
+                Callback = function()
+                    loadstring(game:HttpGet(url))()
+                    print("Script Executed")
+                end
+            })
+        end
+
+        Tab4:AddSection({ Name = "Inf Jump Script" })
+        addButton("Inf Jump Script", "https://raw.githubusercontent.com/shakar60/infjump/main/script")
+
+
+        Tab4:AddSection({ Name = "LightTuxs Esp Gui" })
+        addButton("LightTuxs Esp Gui", "https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md")
+
+Tab4:AddSection({ Name = "Universal Anticheat Bypass" })
+        addButton("Universal Anticheat Bypass", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
+
+        Tab4:AddParagraph("Other Untitled Tag Game Scripts")
+
+        Tab4:AddSection({ Name = "RenxWare Untitled Tag Game Script Gui" })
+        addButton("Renxware Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua")
+
+        Tab4:AddSection({ Name = "Syn.o's Untitled Tag Game Script Gui" })
+        addButton("Syn.o's Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script")
+    end
+
+    addMiscScripts()
+
+    -- Player Info
+    Tab2:AddSection({ Name = "Player Username:" })
+    Tab2:AddParagraph("UserName", "UserName: " .. game.Players.LocalPlayer.Name)
+
+    Tab2:AddSection({ Name = "Player DisplayName:" })
+    Tab2:AddParagraph("DisplayName", "DisplayName: " .. game.Players.LocalPlayer.DisplayName)
+
+    Tab2:AddSection({ Name = "Player UserID:" })
+    Tab2:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
+
+    Tab2:AddSection({ Name = "Player Account Age:" })
+    Tab2:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+
+    -- Map Info
+    Tab2:AddSection({ Name = "Map:" })
+
+    local mapParagraph
+
+    local function updateMapName()
+        local placeId = game.PlaceId
+        local placeInfo = game:GetService("MarketplaceService"):GetProductInfo(placeId)
+        local mapName = placeInfo.Name or "Unknown Map"
+
+        -- If the paragraph does not exist, create it
+        if not mapParagraph then
+            mapParagraph = Tab2:AddParagraph("Map", "Map: " .. mapName)
+        else
+            -- Otherwise, update the existing paragraph text
+            mapParagraph:SetText("Map: " .. mapName)
+        end
+    end
+
+    -- Initial call to set the map name
+    updateMapName()
+
+    -- Update map name when a new player joins
+    game:GetService("Players").PlayerAdded:Connect(function()
+        updateMapName()
+    end)
+
+    Tab2:AddSection({ Name = "Map ID:" })
+    local mapID = game.PlaceId
+    Tab2:AddParagraph("Map ID", "Map ID: " .. mapID)
+else
+    print("This script is not intended for this game.")
+end
