@@ -141,7 +141,7 @@ if game.PlaceId == specificPlaceId then
 
 
         Tab4:AddSection({ Name = "FullBright Script" })
-        addButton("Fullbright Script", "https://raw.githubusercontent.com/shakar60/no-fog/main/script")
+        addButton("Fullbright Script", "https://raw.githubusercontent.com/shakar60/fullbright/main/scripts")
 
 
         Tab4:AddSection({ Name = "No Fog Script" })
