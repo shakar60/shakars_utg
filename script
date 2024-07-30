@@ -12,7 +12,7 @@ if game.PlaceId == specificPlaceId then
     local Window = OrionLib:MakeWindow({
         Name = " ⭐️ Shakars UTG | Untitled Tag Game⭐️",
         HidePremium = false,
-        IntroEnabled = false,
+        IntroEnabled = true,
         SaveConfig = true,
         ConfigFolder = "shakar"
     })
